@@ -1,0 +1,76 @@
+{
+    "questions": [{
+            "questionText": "افضل فلم سوبر هيرو",
+            "options": [{
+                    "text": "ديدبول",
+                    "correct": true
+                },
+                {
+                    "text": "سبيدرمان"
+                },
+                {
+                    "text": "ذا افنجرز"
+                },
+                {
+                    "text": "اكس مان"
+                }
+            ],
+            "explanation": ""
+        },
+        {
+            "questionText": "ما هوا افضل انمي",
+            "options": [{
+                    "text": "ديث نوت"
+                },
+                {
+                    "text": "ناروتو"
+                },
+                {
+                    "text": "بوكو نو هيرو"
+                },
+                {
+                    "text": "جينتاما ",
+                    "correct": true
+                }
+            ],
+            "explanation": "trd lasso is the best"
+        },
+        {
+            "questionText": "ما هوا افضل مسلسل ",
+            "options": [{
+                    "text": "ويست ورلد"
+                },
+                {
+                    "text": "هانيبال",
+                    "correct": true
+                },
+                {
+                    "text": "يوتوبيا"
+                },
+                {
+                    "text": "مايند هانتر"
+                }
+            ],
+            "explanation": ""
+        },
+        {
+            "questionText": "ما هوا افضل فلم",
+            "options": [{
+                    "text": "بيراتس او كارايب"
+                },
+                {
+                    "text": "ذا ماتريكس ",
+                    "correct": true
+                },
+                {
+                    "text": "هاري بوتر"
+                },
+                {
+                    "text": "سبيدر مان"
+                }
+            ],
+            "explanation": ""
+        }
+      
+    ]
+}

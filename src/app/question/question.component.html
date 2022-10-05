@@ -1,0 +1,65 @@
+<div class="container mt-5 all">
+    <div class="card">
+        <div class="d-flex justify-content-between p-3">
+            <div class="image">
+                <!-- <img src="" width="90" alt="logo"> -->
+            </div>
+            <div class="quiz-header">
+                <h4 style="font-family:cursive;"></h4>
+            </div>
+        </div>
+
+        <ng-container *ngIf="!isQuizCompleted">
+            <div class="d-flex justify-content-around py-3">
+                <div class="score">
+                    <h5>{{point}} نقطة</h5>
+                </div>
+                <div class="question-remain">
+                    <span style="font-style: italic;">سؤال {{currentQuestion+1}}/{{questionList.length}}</span>
+                </div>
+                <div class="timer">
+                    <h5>{{counter}} ثانية ⏱</h5>
+                </div>
+            </div>
+            <div class="progress mb-3">
+                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [ngStyle]="{'width':progress+'%'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div class="question">
+                <div class="card">
+                    <h3>{{questionList[currentQuestion]?.questionText}}</h3>
+                </div>
+            </div>
+            <div class="options">
+                <ol *ngFor="let option of questionList[currentQuestion]?.options">
+                    <li (click)="answer(currentQuestion+1,option)">
+                        <div appChangeBg [isCorrect]="option.correct" class="card">
+                            {{option.text}}
+                        </div>
+                    </li>
+
+                </ol>
+            </div>
+            <div class="d-flex justify-content-between">
+                <!-- <button [disabled]="currentQuestion===0" class="btn" (click)="PreviousQuestion()"><i class="fa text-primary fa-chevron-left fa-3x" aria-hidden="true"></i></button> -->
+                <button class="btn right" (click)="NextQuestion(currentQuestion+1)"><i class="fa text-primary fa-chevron-right fa-3x" aria-hidden="true"></i> السؤال التالي </button>
+               
+                <!-- <button class="btn" (click)="restquiz()"><i class="fa fa-refresh text-primary fa-3x" aria-hidden="true"></i></button> -->
+            </div>
+        </ng-container>
+
+        <ng-container *ngIf="isQuizCompleted">
+            <div class="row d-flex justify-content-between">
+                <img style="width: 50%;" class="img-fluid col-sm-12 mx-auto" src="https://preview.redd.it/gl4lf9ep2py61.gif?s=88a0d2214c76ca0be278290c2fda1cd7bea8352a" alt="">                
+                <div class="result text-center col-md-6 col-sm-12">
+                    <h3> نتائجك </h3> <br>
+                    <p>مجموع اسئلة: {{questionList.length}} </p>
+                    <p>مجموع اسئلة صحيحة: {{correctAnswer}} </p>
+                    <p>مجموع اسئلة خاطئة: {{worngAnswer}} </p>
+                    <p>نتيجة: {{point}} نقطة </p>
+                </div>
+            </div>
+            <button class="btn btn-primary btn-lg again" routerLink="/welcome">اعادة من جديد</button>
+        </ng-container>
+
+    </div>
+</div>
